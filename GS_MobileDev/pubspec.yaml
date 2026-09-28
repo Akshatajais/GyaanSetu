@@ -1,0 +1,67 @@
+name: gyan_setu
+description: GyanSetu - An educational platform combining lecture streaming, document sharing, and interactive learning
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1  # use the latest since your Flutter is 3.27.2 with Dart 3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # From chacing (video app)
+  video_player: ^2.8.6
+  chewie: ^1.11.3
+
+  # From both apps (take latest)
+  shared_preferences: ^2.3.3
+
+  # From abeja (pdf, audio, network, background work)
+  http: ^1.2.2
+  dio: ^5.7.0
+  path_provider: ^2.1.1
+  permission_handler: ^11.0.1
+  flutter_pdfview: ^1.3.2
+  just_audio: ^0.9.39
+  audio_session: ^0.1.19
+  connectivity_plus: ^6.1.1
+  nearby_connections: ^4.3.0
+  file_picker: ^8.0.0
+  android_alarm_manager_plus: ^4.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/mock/
+
+dependency_overrides:
+  # Pin to Kotlin 1.9-compatible version to avoid Kotlin 2.2.0 artifacts on Android
+  package_info_plus: ^8.0.2
+  # Chewie pulls wakelock_plus; pin EXACTLY to a Kotlin 1.9-compatible version
+  wakelock_plus: 1.3.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/logo_gyaansetu.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/icon/logo_gyaansetu.png"
+    background_color: "#FFFFFF"
+    theme_color: "#2196F3"
+  windows:
+    generate: true
+    image_path: "assets/icon/logo_gyaansetu.png"
+    icon_size: 48
+  macos:
+    generate: true
+    image_path: "assets/icon/logo_gyaansetu.png"
